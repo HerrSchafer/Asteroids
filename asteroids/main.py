@@ -3,7 +3,12 @@ from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state
 
 def main():
+    print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
+    print("Screen width: 1280")
+    print("Screen height: 720")
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     while True:
         log_state()
@@ -12,9 +17,7 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
-    print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
-    print("Screen width: 1280")
-    print("Screen height: 720")
+        dt = clock.tick(60)/1000
 
 
 
